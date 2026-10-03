@@ -3,7 +3,7 @@ import path from "node:path";
 
 const rulesPath = path.join(process.cwd(), "knowledge", "rules", "store-rules.json");
 if (!fs.existsSync(rulesPath)) {
-  console.error("store-rules.json bulunamadı!");
+  console.error("store-rules.json not found!");
   process.exit(1);
 }
 
@@ -12,24 +12,24 @@ const now = new Date();
 const STALE_DAYS = 90;
 let staleCount = 0;
 
-console.log("=== Mağaza Kuralları Tazelik Denetimi ===");
+console.log("=== Store Rules Freshness Verification ===");
 for (const rule of raw) {
   const verifiedDate = new Date(rule.verifiedAt);
   const diffTime = now.getTime() - verifiedDate.getTime();
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
   if (diffDays > STALE_DAYS) {
-    console.error(`❌ [BAYAT KURAL] ${rule.id} (${rule.title}): ${diffDays} gün önce doğrulandı (Sınır: ${STALE_DAYS} gün).`);
+    console.error(`❌ [STALE RULE] ${rule.id} (${rule.title}): verified ${diffDays} days ago (Threshold: ${STALE_DAYS} days).`);
     staleCount++;
   } else {
-    console.log(`✅ [GÜNCEL] ${rule.id} (${diffDays} gün önce doğrulandı).`);
+    console.log(`✅ [FRESH] ${rule.id} (verified ${Math.abs(diffDays)} day(s) ago).`);
   }
 }
 
 if (staleCount > 0) {
-  console.error(`\nToplam ${staleCount} adet kural 90 günden eski. Lütfen resmi kaynakları kontrol edip verifiedAt tarihlerini güncelleyin.`);
+  console.error(`\nFound ${staleCount} stale rule(s) older than 90 days. Please verify official documentation and update verifiedAt dates.`);
   process.exit(1);
 } else {
-  console.log(`\nTüm kurallar (${raw.length} adet) güncel ve taze.`);
+  console.log(`\nAll ${raw.length} store rules verified fresh.`);
   process.exit(0);
 }

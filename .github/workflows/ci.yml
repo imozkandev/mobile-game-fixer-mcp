@@ -29,11 +29,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build TypeScript
+        run: npm run build
+
       - name: Validate Knowledge Base
         run: npm run validate-knowledge
 
       - name: Run Test Suite
         run: npm test
+
+      - name: Run AI Agent Evals
+        run: npm run eval
 
       - name: Verify Rule Freshness
         run: npm run verify-rules
