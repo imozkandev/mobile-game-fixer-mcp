@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "pretest": "npm run build",
+    "pretest": "npm run build && node scripts/make-fixtures.mjs",
     "test": "node --test test/*.test.mjs",
     "eval": "npm run build && node evals/run-evals.mjs",
     "prevalidate-knowledge": "npm run build",

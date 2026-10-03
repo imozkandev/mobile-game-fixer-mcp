@@ -5,7 +5,7 @@
     "failed": 0,
     "top1Accuracy": "100.0%",
     "top3Accuracy": "100.0%",
-    "avgLatencyMs": "4.24ms"
+    "avgLatencyMs": "4.32ms"
   },
   "results": [
     {
@@ -22,7 +22,7 @@
         "M-02"
       ],
       "confidence": "high",
-      "latencyMs": 9.51
+      "latencyMs": 9.45
     },
     {
       "testId": "eval-02",
@@ -38,7 +38,7 @@
         "M-39"
       ],
       "confidence": "high",
-      "latencyMs": 3.73
+      "latencyMs": 3.81
     },
     {
       "testId": "eval-03",
@@ -54,7 +54,7 @@
         "M-06"
       ],
       "confidence": "high",
-      "latencyMs": 4.42
+      "latencyMs": 4.4
     },
     {
       "testId": "eval-04",
@@ -70,7 +70,7 @@
         "M-25"
       ],
       "confidence": "high",
-      "latencyMs": 4.43
+      "latencyMs": 4.45
     },
     {
       "testId": "eval-05",
@@ -86,7 +86,7 @@
         "M-03"
       ],
       "confidence": "high",
-      "latencyMs": 4.5
+      "latencyMs": 4.87
     },
     {
       "testId": "eval-06",
@@ -102,7 +102,7 @@
         "M-30"
       ],
       "confidence": "medium",
-      "latencyMs": 3.75
+      "latencyMs": 3.53
     },
     {
       "testId": "eval-07",
@@ -118,7 +118,7 @@
         "M-10"
       ],
       "confidence": "high",
-      "latencyMs": 4.72
+      "latencyMs": 4.8
     },
     {
       "testId": "eval-08",
@@ -134,7 +134,7 @@
         "M-25"
       ],
       "confidence": "high",
-      "latencyMs": 4.12
+      "latencyMs": 4.28
     },
     {
       "testId": "eval-09",
@@ -166,7 +166,7 @@
         "M-17"
       ],
       "confidence": "high",
-      "latencyMs": 4.77
+      "latencyMs": 4.84
     },
     {
       "testId": "eval-11",
@@ -182,7 +182,7 @@
         "M-16"
       ],
       "confidence": "high",
-      "latencyMs": 3.48
+      "latencyMs": 3.58
     },
     {
       "testId": "eval-12",
@@ -198,7 +198,7 @@
         "M-01"
       ],
       "confidence": "high",
-      "latencyMs": 4.3
+      "latencyMs": 4.41
     },
     {
       "testId": "eval-13",
@@ -214,7 +214,7 @@
         "M-22"
       ],
       "confidence": "high",
-      "latencyMs": 3.36
+      "latencyMs": 3.38
     },
     {
       "testId": "eval-14",
@@ -230,7 +230,7 @@
         "M-01"
       ],
       "confidence": "high",
-      "latencyMs": 3.57
+      "latencyMs": 3.72
     },
     {
       "testId": "eval-15",
@@ -246,7 +246,7 @@
         "M-41"
       ],
       "confidence": "high",
-      "latencyMs": 4.28
+      "latencyMs": 4.43
     },
     {
       "testId": "eval-16",
@@ -262,7 +262,7 @@
         "M-16"
       ],
       "confidence": "high",
-      "latencyMs": 4.02
+      "latencyMs": 4.11
     },
     {
       "testId": "eval-17",
@@ -278,7 +278,7 @@
         "M-01"
       ],
       "confidence": "high",
-      "latencyMs": 3.27
+      "latencyMs": 3.4
     },
     {
       "testId": "eval-18",
@@ -292,7 +292,7 @@
         "M-35"
       ],
       "confidence": "high",
-      "latencyMs": 3.69
+      "latencyMs": 3.79
     },
     {
       "testId": "eval-19",
@@ -308,7 +308,7 @@
         "M-09"
       ],
       "confidence": "high",
-      "latencyMs": 3.28
+      "latencyMs": 3.39
     },
     {
       "testId": "eval-20",
@@ -324,7 +324,7 @@
         "M-24"
       ],
       "confidence": "high",
-      "latencyMs": 3.76
+      "latencyMs": 3.85
     }
   ]
 }

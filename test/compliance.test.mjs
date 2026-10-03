@@ -1,9 +1,19 @@
-import test from "node:test";
+import test, { before } from "node:test";
 import assert from "node:assert/strict";
 import path from "node:path";
+import fs from "node:fs";
 import { checkStoreCompliance } from "../dist/core/compliance/index.js";
 
 const fixturesDir = path.join(process.cwd(), "test", "fixtures");
+
+before(() => {
+  // Ensure android-bad sensitive test fixture files exist even if excluded by git
+  const androidBadDir = path.join(fixturesDir, "android-bad");
+  if (fs.existsSync(androidBadDir)) {
+    fs.writeFileSync(path.join(androidBadDir, "release.keystore"), "DUMMY_KEYSTORE_CONTENT");
+    fs.writeFileSync(path.join(androidBadDir, ".env"), "SECRET_API_KEY=12345");
+  }
+});
 
 test("Android Good fixture passes all checks", () => {
   const goodPath = path.join(fixturesDir, "android-good");
