@@ -1,0 +1,194 @@
+{
+  "overheating": [
+    "overheating",
+    "thermal",
+    "throttling",
+    "throttle",
+    "hot",
+    "overheats",
+    "isinma",
+    "sicak",
+    "hararet"
+  ],
+  "crash": [
+    "crash",
+    "oom",
+    "out of memory",
+    "abnormal exit",
+    "force close",
+    "killed",
+    "terminated",
+    "exception",
+    "cokme",
+    "kapaniyor"
+  ],
+  "fps": [
+    "fps",
+    "framerate",
+    "frame rate",
+    "drops frames",
+    "kare hizi",
+    "kare dususu"
+  ],
+  "stutter": [
+    "stutter",
+    "micro stutter",
+    "lag",
+    "hitch",
+    "freeze",
+    "takilma",
+    "donma",
+    "kare atlamasi"
+  ],
+  "gc": [
+    "gc",
+    "garbage collection",
+    "gc alloc",
+    "gc spike",
+    "heap allocation",
+    "bellek copu"
+  ],
+  "savegame": [
+    "save",
+    "savegame",
+    "progress",
+    "cloud save",
+    "sync",
+    "data loss",
+    "migration",
+    "reset",
+    "kayit",
+    "ilerleme"
+  ],
+  "store_rejection": [
+    "rejection",
+    "rejected",
+    "policy",
+    "violation",
+    "store review",
+    "guideline",
+    "itms",
+    "magaza",
+    "red"
+  ],
+  "target_api": [
+    "target api",
+    "targetsdk",
+    "targetsdkversion",
+    "api level",
+    "api version",
+    "hedef api"
+  ],
+  "page_size": [
+    "16 kb",
+    "16kb",
+    "page size",
+    "elf",
+    "p_align",
+    "alignment",
+    "shared object",
+    "sayfa boyutu"
+  ],
+  "privacy": [
+    "privacy manifest",
+    "xcprivacy",
+    "nsprivacyaccessedapitypes",
+    "required reason",
+    "privacy policy",
+    "gizlilik"
+  ],
+  "tracking": [
+    "att",
+    "tracking",
+    "app tracking transparency",
+    "idfa",
+    "nstracking",
+    "izleme"
+  ],
+  "gacha": [
+    "loot box",
+    "gacha",
+    "drop rate",
+    "odds",
+    "probability",
+    "chest",
+    "kasa",
+    "oranlar",
+    "sans kutusu"
+  ],
+  "iap": [
+    "iap",
+    "in-app purchase",
+    "billing",
+    "receipt",
+    "finishTransaction",
+    "consumeAsync",
+    "restore purchases",
+    "payment",
+    "satin alma",
+    "odeme"
+  ],
+  "churn": [
+    "churn",
+    "dropoff",
+    "level drop",
+    "retention",
+    "difficulty cliff",
+    "terk",
+    "oyuncular birakiyor"
+  ],
+  "vitals": [
+    "vitals",
+    "android vitals",
+    "crash rate",
+    "anr",
+    "anr rate",
+    "bad behavior"
+  ],
+  "backend": [
+    "server",
+    "backend",
+    "launch",
+    "outage",
+    "downtime",
+    "503",
+    "sunucu",
+    "lansman"
+  ],
+  "turkish_i": [
+    "turkish i",
+    "case conversion",
+    "dotless i",
+    "toupper",
+    "tolower",
+    "cultureinvariant",
+    "turkce",
+    "i sorunu"
+  ],
+  "kill_switch": [
+    "kill switch",
+    "remote config",
+    "feature flag",
+    "hotfix",
+    "ota",
+    "uzaktan ayar"
+  ],
+  "battery": [
+    "battery",
+    "battery drain",
+    "power consumption",
+    "wakelock",
+    "pil",
+    "sarj"
+  ],
+  "rendering": [
+    "shader",
+    "overdraw",
+    "draw call",
+    "gpu",
+    "vulkan",
+    "metal",
+    "batching",
+    "render"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "M-43",
+  "title": "Ad mediation SDK blocking main UI thread during initial startup (ANR)",
+  "category": "networking",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Black screen for 5 seconds on startup or Android 'App Not Responding' (ANR) warning"
+  ],
+  "keywords": [
+    "admob anr",
+    "main thread lock",
+    "ad mediation",
+    "startup anr",
+    "black screen startup"
+  ],
+  "causes": [
+    "Synchronously initializing multiple ad mediation network adapters on main thread"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Initialize ad SDKs on a background thread or defer until after the first loading screen.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Include only actively used mediation adapters.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Verify main thread is not blocked for more than 500ms during cold startup."
+  ],
+  "tools": [],
+  "related": [
+    "M-28",
+    "M-44"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

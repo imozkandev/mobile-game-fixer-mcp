@@ -1,0 +1,43 @@
+{
+  "name": "mobile-game-fixer-mcp",
+  "version": "1.0.0",
+  "description": "Deterministic mobile game troubleshooting & store compliance MCP server",
+  "type": "module",
+  "main": "dist/mcp.js",
+  "types": "dist/mcp.d.ts",
+  "bin": {
+    "mobile-game-fixer": "./dist/cli.js",
+    "mobile-game-fixer-mcp": "./dist/mcp.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "node --test test/*.test.mjs",
+    "eval": "npm run build && node evals/run-evals.mjs",
+    "validate-knowledge": "node scripts/validate-knowledge.mjs",
+    "verify-rules": "node scripts/verify-rules.mjs",
+    "web:dev": "npm --prefix web run dev",
+    "web:build": "npm --prefix web run build",
+    "web:start": "npm --prefix web run start"
+  },
+  "keywords": [
+    "mcp",
+    "mobile-game",
+    "game-development",
+    "troubleshooting",
+    "store-compliance",
+    "unity",
+    "godot",
+    "unreal"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "M-39",
+  "title": "Audio cutout and buzzing when connecting or disconnecting Bluetooth headphones",
+  "category": "audio",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "All game audio mutes permanently when connecting or disconnecting AirPods / Bluetooth headphones",
+    "Bluetooth disconnect audio mute",
+    "Oyuncu AirPods veya kablosuz kulaklığı çıkardığında oyunun tüm sesi gidiyor"
+  ],
+  "keywords": [
+    "bluetooth headphones",
+    "kablosuz kulaklik",
+    "audio route change",
+    "airpods",
+    "audio reset",
+    "ses kesilmesi",
+    "ses gidiyor",
+    "kulaklik cikarma"
+  ],
+  "causes": [
+    "Audio engine failing to adapt to sample rate changes when audio routing changes"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Listen to audio configuration change events and call `AudioSettings.Reset()` to re-initialize drivers.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Perform headset plug/unplug tests during active gameplay QA."
+  ],
+  "tools": [],
+  "related": [
+    "M-24",
+    "M-38"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

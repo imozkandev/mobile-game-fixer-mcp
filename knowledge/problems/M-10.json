@@ -1,0 +1,67 @@
+{
+  "id": "M-10",
+  "title": "Google Play upload rejection due to outdated Target SDK API level",
+  "category": "store_policy",
+  "severity": "critical",
+  "platforms": [
+    "android"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "güncelleme play'e yüklenmiyor target api hatası",
+    "Your app currently targets API level X and must target at least API level Y",
+    "Play Console blocks new APK/AAB release submission",
+    "Google Play Target API 35 requirement rejection"
+  ],
+  "keywords": [
+    "target api",
+    "targetsdk",
+    "targetsdkversion",
+    "api level",
+    "play console",
+    "target api hatasi",
+    "google play requirement",
+    "android 15",
+    "api 35",
+    "api 36"
+  ],
+  "causes": [
+    "targetSdkVersion in build.gradle is lower than Google Play's mandatory annual threshold"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Update targetSdkVersion to at least the required level (API 35+) in build.gradle or Project Settings.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Update AndroidManifest permissions and foreground service declarations mandated by the new API level.",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Upgrade 3rd party SDKs to versions compatible with the new target API.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Track Google Play annual Target SDK deadlines (typically August/November)."
+  ],
+  "tools": [],
+  "related": [
+    "M-11",
+    "M-12"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.android.com/google/play/requirements/target-sdk",
+      "type": "primary",
+      "title": "Google Play Target SDK Requirements"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "M-13",
+  "title": "Apple Privacy Manifest (PrivacyInfo.xcprivacy) & Required Reason API rejection",
+  "category": "store_policy",
+  "severity": "critical",
+  "platforms": [
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "apple privacy manifest yüzünden reddedildi",
+    "ITMS-91053: Missing API declaration in Privacy Manifest",
+    "Empty or missing NSPrivacyAccessedAPITypeReasons in PrivacyInfo.xcprivacy",
+    "App Store Connect submission rejection"
+  ],
+  "keywords": [
+    "privacy manifest",
+    "xcprivacy",
+    "privacyinfo",
+    "required reason",
+    "itms-91053",
+    "nsprivacyaccessedapitypes",
+    "apple privacy",
+    "app store rejected"
+  ],
+  "causes": [
+    "Using sensitive APIs (UserDefaults, File Timestamp, Disk Space) without declaring approved reason codes in PrivacyInfo.xcprivacy"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Add PrivacyInfo.xcprivacy to your Xcode project root.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Populate NSPrivacyAccessedAPITypes with Apple standard reason codes (NSPrivacyAccessedAPITypeReasons).",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Upgrade 3rd party SDKs to versions shipping valid privacy manifests.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Generate a Privacy Report in Xcode Organizer before submitting build to App Store."
+  ],
+  "tools": [],
+  "related": [
+    "M-14",
+    "M-19"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.apple.com/documentation/bundleresources/privacy_manifest_files",
+      "type": "primary",
+      "title": "Privacy Manifest Files"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

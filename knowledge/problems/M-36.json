@@ -1,0 +1,54 @@
+{
+  "id": "M-36",
+  "title": "Right-to-Left (RTL) Arabic & Hebrew text disjointed and reversed layout",
+  "category": "localization",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Arabic letters disconnected and displayed in reverse order",
+    "RTL Arabic text disjointed",
+    "UI progress bars and buttons aligning to wrong edge"
+  ],
+  "keywords": [
+    "rtl",
+    "arabic",
+    "hebrew",
+    "bidi",
+    "textmeshpro rtl",
+    "sagdan sola",
+    "arapca"
+  ],
+  "causes": [
+    "Default text component lacking BiDi (Bi-directional) and Arabic glyph shaping algorithms"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Enable TextMeshPro RTL support and integrate an Arabic shaping plugin.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Apply a layout mirroring script to invert X-anchors on RTL locales.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Verify localized builds with a native Arabic speaker before release."
+  ],
+  "tools": [],
+  "related": [
+    "M-09",
+    "M-35",
+    "M-37"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

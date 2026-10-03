@@ -1,0 +1,55 @@
+{
+  "id": "M-05",
+  "title": "High Draw Call & SetPass Call count causing CPU render bottleneck",
+  "category": "rendering",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "CPU rendering thread time increases when many small objects are visible",
+    "Draw Calls exceed 200+ on mobile"
+  ],
+  "keywords": [
+    "draw call",
+    "setpass",
+    "batching",
+    "dynamic batching",
+    "gpu instancing",
+    "sprite atlas"
+  ],
+  "causes": [
+    "Multiple unique materials and individual un-batched textures",
+    "Lack of Sprite Atlases for 2D/UI elements"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Pack 2D sprites and UI graphics into unified Sprite Atlases.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Enable GPU Instancing or Static Batching on meshes sharing identical materials.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Keep total mobile draw calls within 100-150 binned calls."
+  ],
+  "tools": [],
+  "related": [
+    "M-01",
+    "M-04"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

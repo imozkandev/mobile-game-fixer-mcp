@@ -1,0 +1,65 @@
+{
+  "id": "M-11",
+  "title": "Android 16 KB page-size (ELF alignment) incompatibility for native libraries",
+  "category": "store_policy",
+  "severity": "critical",
+  "platforms": [
+    "android"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "native kütüphane 16 kb hatası",
+    "16 KB page size alignment error",
+    "Native .so shared library is not aligned to 16 KB page boundaries",
+    "Native crash on Android 15+ devices when loading native libraries",
+    "Play Console 16 KB page size warning"
+  ],
+  "keywords": [
+    "16 kb",
+    "16kb",
+    "page size",
+    "elf",
+    "p_align",
+    "alignment",
+    "native library",
+    "libfoo.so",
+    "ndk",
+    "16 kb hatasi",
+    "sayfa boyutu",
+    "android 15"
+  ],
+  "causes": [
+    "Native C/C++ `.so` shared libraries built with 4 KB (0x1000) PT_LOAD alignment instead of 16 KB (0x4000)"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Recompile native C/C++ code using Android NDK r28+ with `-Wl,-z,max-page-size=16384` linker flag.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Request 16 KB compliant binaries from 3rd party SDK providers (analytics, ads, audio).",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Enforce automated CI checks verifying all 64-bit .so binaries have `PT_LOAD p_align >= 0x4000`."
+  ],
+  "tools": [],
+  "related": [
+    "M-10",
+    "M-12"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.android.com/guide/practices/page-sizes",
+      "type": "primary",
+      "title": "Support 16 KB page sizes"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

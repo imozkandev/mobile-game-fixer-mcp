@@ -1,0 +1,48 @@
+{
+  "id": "M-30",
+  "title": "Engine unhandled exception causing silent game freeze",
+  "category": "crash",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "NullReferenceException in asynchronous callback breaks main loop without crash reporter capture"
+  ],
+  "keywords": [
+    "unhandled exception",
+    "nullreferenceexception",
+    "silent crash",
+    "crashlytics",
+    "sessiz cokme"
+  ],
+  "causes": [
+    "Uncaught exceptions inside async tasks breaking the engine rendering loop"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Attach global exception handlers (AppDomain.CurrentDomain.UnhandledException / Application.logMessageReceived).",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Integrate Crashlytics / Sentry for real-time error telemetry.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Use null-conditional operators (`?.`) and defensive checks in async callbacks."
+  ],
+  "tools": [],
+  "related": [
+    "M-28"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

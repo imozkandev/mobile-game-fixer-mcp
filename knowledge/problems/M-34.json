@@ -1,0 +1,50 @@
+{
+  "id": "M-34",
+  "title": "Memory manipulation and cheat engine coin/health hacking",
+  "category": "security",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Players modifying currency and health values in memory using GameGuardian or Cheat Engine"
+  ],
+  "keywords": [
+    "memory hack",
+    "cheat engine",
+    "gameguardian",
+    "obscured types",
+    "bellek manipülasyonu",
+    "hile"
+  ],
+  "causes": [
+    "Storing sensitive economy and health variables as plain integers/floats in memory"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Use XOR-encrypted memory wrappers (e.g. Anti-Cheat Toolkit ObscuredTypes).",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Make critical purchases and reward calculations server-authoritative.",
+      "effort": "high"
+    }
+  ],
+  "prevention": [
+    "Enable code obfuscation (ProGuard / Unity Obfuscator) in release builds."
+  ],
+  "tools": [],
+  "related": [
+    "M-21",
+    "M-33"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

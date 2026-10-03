@@ -1,0 +1,107 @@
+[
+  {
+    "id": "play-target-api",
+    "platform": "android",
+    "title": "Google Play Target API Level Requirement (API 35+)",
+    "appliesTo": "All new app submissions and updates on Google Play",
+    "effectiveDate": "2026-11-01",
+    "kind": "deadline",
+    "problemIds": [
+      "M-10"
+    ],
+    "checkId": "android-target-sdk",
+    "source": {
+      "url": "https://developer.android.com/google/play/requirements/target-sdk",
+      "type": "primary",
+      "title": "Target API level requirements for Google Play apps"
+    },
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "play-16kb-page-size",
+    "platform": "android",
+    "title": "Android 16 KB Page Size Alignment Mandate",
+    "appliesTo": "All apps targeting Android 15+ containing native C/C++ (.so) shared libraries",
+    "effectiveDate": "2027-02-01",
+    "kind": "deadline",
+    "problemIds": [
+      "M-11"
+    ],
+    "checkId": "android-elf-16kb-alignment",
+    "source": {
+      "url": "https://developer.android.com/guide/practices/page-sizes",
+      "type": "primary",
+      "title": "Support 16 KB page sizes"
+    },
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "ios-xcode-sdk-version",
+    "platform": "ios",
+    "title": "Xcode and iOS SDK Minimum Version Requirement (iOS 18 / Xcode 16)",
+    "appliesTo": "All iOS apps submitted to the App Store",
+    "effectiveDate": "2026-04-25",
+    "kind": "deadline",
+    "problemIds": [
+      "M-13"
+    ],
+    "checkId": "ios-xcode-version",
+    "source": {
+      "url": "https://developer.apple.com/ios/submit/",
+      "type": "primary",
+      "title": "Submitting iOS Apps to the App Store"
+    },
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "ios-privacy-manifest",
+    "platform": "ios",
+    "title": "PrivacyInfo.xcprivacy and Required Reason API Declaration",
+    "appliesTo": "All iOS apps and 3rd party SDKs accessing sensitive APIs (UserDefaults, File Timestamps)",
+    "effectiveDate": "2024-05-01",
+    "kind": "deadline",
+    "problemIds": [
+      "M-13"
+    ],
+    "checkId": "ios-privacy-manifest-check",
+    "source": {
+      "url": "https://developer.apple.com/documentation/bundleresources/privacy_manifest_files",
+      "type": "primary",
+      "title": "Privacy manifest files"
+    },
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "ios-att-tracking",
+    "platform": "ios",
+    "title": "App Tracking Transparency (ATT) & NSUserTrackingUsageDescription",
+    "appliesTo": "All iOS apps collecting telemetry or advertising identifiers (IDFA)",
+    "kind": "requirement",
+    "problemIds": [
+      "M-14"
+    ],
+    "checkId": "ios-att-check",
+    "source": {
+      "url": "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+      "type": "primary",
+      "title": "User Privacy and Data Use"
+    },
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "play-closed-testing-personal-account",
+    "platform": "android",
+    "title": "14-Day 20-Tester Closed Testing Requirement for Personal Play Console Accounts",
+    "appliesTo": "All personal Google Play developer accounts created after Nov 13, 2023",
+    "kind": "requirement",
+    "problemIds": [
+      "M-10"
+    ],
+    "source": {
+      "url": "https://support.google.com/googleplay/android-developer/answer/14151465",
+      "type": "secondary",
+      "title": "Google Play closed testing requirements"
+    },
+    "verifiedAt": "2026-10-04"
+  }
+]

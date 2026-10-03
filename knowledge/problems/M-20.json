@@ -1,0 +1,64 @@
+{
+  "id": "M-20",
+  "title": "IAP transaction billed but items not delivered to user account",
+  "category": "iap",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "para çekildi ama ürün gelmedi",
+    "IAP payment deducted item not delivered",
+    "User was charged but gems/coins were not credited",
+    "Game crashed before transaction finished",
+    "Pending transactions lingering in store queue"
+  ],
+  "keywords": [
+    "iap",
+    "payment deducted",
+    "item not delivered",
+    "finishtransaction",
+    "consumeasync",
+    "restore purchases",
+    "pending transaction",
+    "para cekildi",
+    "urun gelmedi",
+    "satin alma"
+  ],
+  "causes": [
+    "Calling `finishTransaction` / `consumeAsync` before local/server inventory is securely saved",
+    "Missing transaction listener on game startup to process pending/interrupted purchases"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Initialize a persistent Transaction Observer on game startup to catch pending purchases.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Never call `finishTransaction` / `consumeAsync` until item is confirmed and saved.",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Provide a 'Restore Purchases' button in Settings.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Test IAP flow under network disconnect and app force-kill scenarios in sandbox mode."
+  ],
+  "tools": [],
+  "related": [
+    "M-21",
+    "M-25"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

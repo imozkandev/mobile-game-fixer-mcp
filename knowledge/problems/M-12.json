@@ -1,0 +1,56 @@
+{
+  "id": "M-12",
+  "title": "Google Play 64-bit requirement and Android App Bundle (AAB) mandate",
+  "category": "store_policy",
+  "severity": "high",
+  "platforms": [
+    "android"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Play Console rejects APK containing only 32-bit armeabi-v7a",
+    "Rejection when uploading raw APK instead of AAB"
+  ],
+  "keywords": [
+    "64 bit",
+    "arm64-v8a",
+    "aab",
+    "app bundle",
+    "32 bit",
+    "google play 64 bit"
+  ],
+  "causes": [
+    "ARM64 architecture unchecked in build settings or standalone APK uploaded"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Enable ARM64 and ARMv7 architectures with IL2CPP backend.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Generate Android App Bundle (.aab) for release submission.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Configure CI build pipeline to output .aab exclusively for release tracks."
+  ],
+  "tools": [],
+  "related": [
+    "M-10",
+    "M-11"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.android.com/distribute/best-practices/develop/64-bit",
+      "type": "primary",
+      "title": "64-bit requirement"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

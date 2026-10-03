@@ -1,0 +1,79 @@
+{
+  "id": "M-01",
+  "title": "Device overheating & thermal throttling dropping frame rate",
+  "category": "performance",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "FPS drops significantly after 10-15 minutes of gameplay",
+    "Device gets hot to the touch",
+    "Battery drains rapidly",
+    "Game overheats and drops frames",
+    "oyun 10 dakika sonra isiniyor ve fps dusuyor",
+    "Thermal throttling alerts in device logs"
+  ],
+  "keywords": [
+    "overheating",
+    "thermal",
+    "throttling",
+    "fps drop",
+    "frame rate",
+    "drops frames",
+    "battery drain",
+    "hot device",
+    "cpu throttling",
+    "gpu throttling",
+    "isinma",
+    "sicak",
+    "fps dusuyor"
+  ],
+  "causes": [
+    "Target frame rate is uncapped or unnecessarily set to 60/120 FPS on budget hardware",
+    "Expensive computational or physics calculations executing every frame in Update() loop",
+    "Heavy alpha overdraw and unoptimized full-screen transparent particles"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Cap target frame rate based on game genre (e.g., Application.targetFrameRate = 30 or 60).",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Listen to device thermal status APIs and dynamically lower rendering resolution or shadow cascades when device enters severe thermal state.",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Profile transparent UI panels and particle systems to eliminate overlapping alpha fillrate bottlenecks.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Conduct 30-minute continuous play sessions on mid/low-tier release builds while monitoring thermal profiling curves."
+  ],
+  "tools": [
+    {
+      "name": "guard_engine_code",
+      "project": "game-forge-mcp",
+      "coverage": "partial"
+    }
+  ],
+  "related": [
+    "M-03",
+    "M-04",
+    "M-07"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

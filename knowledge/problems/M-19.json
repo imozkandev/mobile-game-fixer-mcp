@@ -1,0 +1,50 @@
+{
+  "id": "M-19",
+  "title": "Missing, broken, or non-compliant Privacy Policy URL",
+  "category": "store_policy",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Store upload warning or rejection because privacy policy URL returns 404 or lacks data disclosure"
+  ],
+  "keywords": [
+    "privacy policy",
+    "privacy url",
+    "gdpr",
+    "kvkk",
+    "gizlilik politikasi"
+  ],
+  "causes": [
+    "Privacy URL link is broken or does not disclose embedded 3rd party SDK telemetry"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Deploy an active HTTPS privacy policy webpage detailing all 3rd party SDK data practices and update store consoles.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Verify privacy policy URL is publicly accessible prior to release submission."
+  ],
+  "tools": [],
+  "related": [
+    "M-13",
+    "M-17"
+  ],
+  "sources": [
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/9870001",
+      "type": "primary",
+      "title": "Privacy Policy Requirements"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

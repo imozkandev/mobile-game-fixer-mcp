@@ -1,0 +1,52 @@
+{
+  "id": "M-08",
+  "title": "Touch input latency and sluggish control response",
+  "category": "device",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "Noticeable delay between finger tap and on-screen character action in fast-paced games"
+  ],
+  "keywords": [
+    "input lag",
+    "touch latency",
+    "input latency",
+    "v-sync buffer",
+    "dokunmatik gecikmesi"
+  ],
+  "causes": [
+    "V-Sync triple-buffering queue",
+    "Decoupled FixedUpdate physics logic vs input polling"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Poll touch inputs directly in Update() loop rather than FixedUpdate().",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Set Max Queued Frames in rendering settings to 1 or 2.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Measure input latency with high-speed camera recordings during QA."
+  ],
+  "tools": [],
+  "related": [
+    "M-01"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "M-33",
+  "title": "Device clock manipulation exploit for unlimited energy and timed rewards",
+  "category": "security",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Players advancing phone clock by 1 day to bypass energy cooldowns and collect daily rewards"
+  ],
+  "keywords": [
+    "time exploit",
+    "device clock",
+    "energy exploit",
+    "server time",
+    "trusted timestamp",
+    "saat hilesi"
+  ],
+  "causes": [
+    "Validating countdown timers using local `DateTime.Now` instead of trusted server timestamps"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Validate time-gated rewards using trusted server NTP or backend timestamps.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "For offline states, track elapsed duration using monotonic uptime clocks (`SystemClock.elapsedRealtime`).",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Detect abrupt forward/backward time jumps and lock reward collection."
+  ],
+  "tools": [],
+  "related": [
+    "M-34"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

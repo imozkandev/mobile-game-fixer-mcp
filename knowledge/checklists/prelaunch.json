@@ -1,0 +1,137 @@
+[
+  {
+    "id": "chk-target-sdk",
+    "text": "Target SDK level meets mandatory Google Play annual requirement (API 35+)?",
+    "area": "Platform Compliance",
+    "platforms": [
+      "android"
+    ],
+    "problemIds": [
+      "M-10"
+    ]
+  },
+  {
+    "id": "chk-16kb-alignment",
+    "text": "All 64-bit .so native libraries aligned to 16 KB boundaries (p_align >= 0x4000)?",
+    "area": "Platform Compliance",
+    "platforms": [
+      "android"
+    ],
+    "problemIds": [
+      "M-11"
+    ]
+  },
+  {
+    "id": "chk-privacy-manifest",
+    "text": "PrivacyInfo.xcprivacy included with valid non-empty Required Reason codes?",
+    "area": "Privacy & Security",
+    "platforms": [
+      "ios"
+    ],
+    "problemIds": [
+      "M-13"
+    ]
+  },
+  {
+    "id": "chk-att-permission",
+    "text": "If ad tracking is active, NSUserTrackingUsageDescription defined in Info.plist with ATTrackingManager prompt?",
+    "area": "Privacy & Security",
+    "platforms": [
+      "ios"
+    ],
+    "requires": {
+      "monetization": [
+        "ads"
+      ]
+    },
+    "problemIds": [
+      "M-14"
+    ]
+  },
+  {
+    "id": "chk-loot-box-rates",
+    "text": "Drop rates (%) for gacha/chests clearly disclosed to user before purchase?",
+    "area": "Monetization",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "requires": {
+      "monetization": [
+        "gacha"
+      ]
+    },
+    "problemIds": [
+      "M-16"
+    ]
+  },
+  {
+    "id": "chk-account-deletion",
+    "text": "In-app account and personal data deletion option provided in Settings for registered accounts?",
+    "area": "Store Policies",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "problemIds": [
+      "M-17"
+    ]
+  },
+  {
+    "id": "chk-iap-finish-transaction",
+    "text": "IAP items saved before finishing transactions and pending receipts processed on startup?",
+    "area": "Monetization",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "requires": {
+      "monetization": [
+        "iap"
+      ]
+    },
+    "problemIds": [
+      "M-20"
+    ]
+  },
+  {
+    "id": "chk-cloud-save-migration",
+    "text": "Save schema versioning defined and backward-compatibility migrations verified?",
+    "area": "Data & Savegame",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "problemIds": [
+      "M-25",
+      "M-26"
+    ]
+  },
+  {
+    "id": "chk-remote-kill-switch",
+    "text": "Remote Config Kill Switch feature flags configured for all live events and online modes?",
+    "area": "Live-Ops & Launch",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "problemIds": [
+      "M-40"
+    ]
+  },
+  {
+    "id": "chk-kids-coppa-policy",
+    "text": "Child-directed titles using certified ad SDKs with personalized tracking disabled?",
+    "area": "Children Policy",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "requires": {
+      "kids": true
+    },
+    "problemIds": [
+      "M-18"
+    ]
+  }
+]

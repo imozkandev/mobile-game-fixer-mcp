@@ -1,0 +1,50 @@
+{
+  "id": "M-37",
+  "title": "Localized text clipping and overflow on buttons (German/Russian translations)",
+  "category": "localization",
+  "severity": "low",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "German/Russian button text overflows boundaries or gets truncated into 'EINVERST...'"
+  ],
+  "keywords": [
+    "text overflow",
+    "truncation",
+    "auto size",
+    "german text overflow",
+    "metin sigmiyor",
+    "ceviri"
+  ],
+  "causes": [
+    "Fixed width button containers assuming short English word lengths"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Enable 'Auto Size' (Min/Max font size clamping) on UI text elements.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Use Content Size Fitter and Horizontal Layout Groups for dynamic button resizing.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Test UI with pseudo-localization (+30% character length) during UI development."
+  ],
+  "tools": [],
+  "related": [
+    "M-09",
+    "M-35"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

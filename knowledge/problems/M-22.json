@@ -1,0 +1,62 @@
+{
+  "id": "M-22",
+  "title": "Mass player churn at specific game level (Difficulty Cliff / Churn Spike)",
+  "category": "liveops",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "oyuncular 7. seviyede bırakıyor",
+    "players quitting at level 7",
+    "Sudden drop-off spike in level completion funnel analytics",
+    "Level completion duration increases 10x",
+    "Difficulty spike churn"
+  ],
+  "keywords": [
+    "churn",
+    "dropoff",
+    "level 7",
+    "difficulty cliff",
+    "funnel analytics",
+    "retention drop",
+    "oyuncular birakiyor",
+    "seviyede birakiyor",
+    "zorluk dengesi"
+  ],
+  "causes": [
+    "Introducing an unexplained game mechanic without proper tutorial",
+    "Exponential difficulty jump in enemy health or puzzle complexity"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Inspect attempt count and failure ratios for the churned level in analytics.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Smooth difficulty curve and provide dynamic hints after repeated failures.",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "A/B test tuned level configurations via Remote Config.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Set up granular funnel telemetry for the first 15 levels prior to launch."
+  ],
+  "tools": [],
+  "related": [
+    "M-40"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "heuristic"
+}

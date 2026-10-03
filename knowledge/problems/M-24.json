@@ -1,0 +1,49 @@
+{
+  "id": "M-24",
+  "title": "Game audio muting or freezing after ad video playback",
+  "category": "audio",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Background music ceases or game stutters after closing an interstitial or rewarded ad"
+  ],
+  "keywords": [
+    "ad audio loss",
+    "audio focus",
+    "avplayer interrupt",
+    "ad crash",
+    "reklam sesi"
+  ],
+  "causes": [
+    "Ad SDK taking audio focus / AVAudioSession and failing to return focus on ad dismissal"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Manually re-activate AudioListener / AVAudioSession in OnAdClosed callback.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Set Time.timeScale = 0 and mute game audio while ad is playing.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Test all ad formats with headphones connected and silent mode toggled."
+  ],
+  "tools": [],
+  "related": [
+    "M-39",
+    "M-43"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

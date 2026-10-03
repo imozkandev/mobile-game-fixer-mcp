@@ -1,0 +1,49 @@
+{
+  "id": "M-31",
+  "title": "Network disconnects and packet loss on unstable mobile connections",
+  "category": "networking",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Player gets disconnected and thrown to title screen on weak 3G/subway connectivity"
+  ],
+  "keywords": [
+    "network retry",
+    "exponential backoff",
+    "timeout",
+    "packet loss",
+    "baglanti koptu",
+    "zayif internet"
+  ],
+  "causes": [
+    "Short network timeout thresholds without automated retry policies"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Implement Exponential Backoff with Jitter for network retries (at least 3 attempts).",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Display a non-blocking 'Reconnecting...' modal rather than quitting the match.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Test gameplay under simulated 50% packet loss using Network Link Conditioner."
+  ],
+  "tools": [],
+  "related": [
+    "M-32"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

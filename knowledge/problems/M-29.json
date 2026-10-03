@@ -1,0 +1,51 @@
+{
+  "id": "M-29",
+  "title": "iOS EXC_BAD_ACCESS / SIGSEGV native memory crash",
+  "category": "crash",
+  "severity": "critical",
+  "platforms": [
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Game terminates instantly to home screen without C# exceptions",
+    "Xcode logs EXC_BAD_ACCESS (KERN_INVALID_ADDRESS)",
+    "iOS native SIGSEGV crash"
+  ],
+  "keywords": [
+    "exc_bad_access",
+    "sigsegv",
+    "native crash",
+    "dangling pointer",
+    "use after free",
+    "ios crash"
+  ],
+  "causes": [
+    "Accessing deallocated C++ memory (Use-after-free), null pointer dereference, or P/Invoke marshalling errors"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Symbolicate crash logs using corresponding dSYM files to pinpoint exact failing frame.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Enable Address Sanitizer (ASan) and Zombie Objects in Xcode scheme.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Pin IntPtr lifecycles in native C/C++ bridges to prevent premature garbage collection."
+  ],
+  "tools": [],
+  "related": [
+    "M-02",
+    "M-28"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "M-17",
+  "title": "In-app account deletion mechanism missing for user-authenticated games",
+  "category": "store_policy",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Rejection under App Store Guideline 5.1.1 for apps offering account creation without in-app delete flow"
+  ],
+  "keywords": [
+    "account deletion",
+    "delete account",
+    "guideline 5.1.1",
+    "hesap silme",
+    "privacy deletion"
+  ],
+  "causes": [
+    "Games with account sign-in failing to provide an immediate 'Delete Account and Data' option in settings"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Add a prominent 'Delete Account' button inside Game Settings.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Trigger backend purge of personal records and cloud saves upon confirmed deletion request.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Design account deletion flows alongside account registration from day one."
+  ],
+  "tools": [],
+  "related": [
+    "M-13",
+    "M-19"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.apple.com/support/offering-account-deletion-in-your-app/",
+      "type": "primary",
+      "title": "Offering account deletion in your app"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

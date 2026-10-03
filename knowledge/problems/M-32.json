@@ -1,0 +1,63 @@
+{
+  "id": "M-32",
+  "title": "Launch day backend overload & server outage (Launch Spike)",
+  "category": "launch",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "lansmanda sunucu çöktü",
+    "server down on launch day with 503 error",
+    "Auth server returns 503 Service Unavailable",
+    "Database connection pool exhaustion on launch day",
+    "All players disconnected during launch"
+  ],
+  "keywords": [
+    "launch spike",
+    "server crash",
+    "503 service unavailable",
+    "backend outage",
+    "rate limit",
+    "connection pool",
+    "login queue",
+    "lansman",
+    "sunucu coktu"
+  ],
+  "causes": [
+    "Thundering Herd effect from thousands of concurrent user logins",
+    "Serving static configuration files directly from primary database instead of CDN"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Place all static game configs and downloadable assets behind a CDN (Cloudflare/CloudFront).",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Enable rate limiting and a dynamic Login Queue.",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Trigger Kill Switch flags to temporarily disable non-critical features (chat, leaderboards).",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Perform load testing at 5x expected peak concurrent users (CCU) 1 week before launch."
+  ],
+  "tools": [],
+  "related": [
+    "M-31",
+    "M-40"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

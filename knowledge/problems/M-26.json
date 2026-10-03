@@ -1,0 +1,52 @@
+{
+  "id": "M-26",
+  "title": "Save data corruption and loss during game version migration (Save Migration)",
+  "category": "savegame",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Existing players lose inventory or high scores after updating the app",
+    "Crash on startup when parsing old save files with new fields",
+    "Save schema migration failure"
+  ],
+  "keywords": [
+    "save migration",
+    "schema version",
+    "data loss",
+    "save corruption",
+    "surum yukseltme",
+    "kayit bozuldu"
+  ],
+  "causes": [
+    "Adding new required JSON keys without writing schema migration logic for older save versions"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Always embed an explicit integer `schemaVersion` inside the save data payload.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Execute sequential migration functions (e.g. v1->v2->v3) populating default values.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Include historical sample save files in automated CI test suites."
+  ],
+  "tools": [],
+  "related": [
+    "M-25",
+    "M-27"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

@@ -1,0 +1,52 @@
+{
+  "phases": {
+    "t-1": {
+      "title": "1 Day Before Launch (T-1)",
+      "steps": [
+        "Verify clean install of final release build on test hardware and validate cloud save restore.",
+        "Verify Remote Config fallback defaults and live kill switch flags in production dashboard.",
+        "Conduct load testing on backend auth/game servers and verify database connection pool limits.",
+        "Audit IAP Sandbox and live store pricing matching in-game economy tables."
+      ],
+      "decisionRules": [
+        "If critical OOM crash or billing transaction loss is detected, halt launch immediately (No-Go).",
+        "Do not commence staged rollout until all P0 pre-launch checklist items are green."
+      ]
+    },
+    "hour-1": {
+      "title": "First Hour of Launch (Hour-1)",
+      "steps": [
+        "Initiate Staged Rollout at 5% - 10% cohort allocation.",
+        "Monitor real-time server CPU, memory, API latency, and 5xx error spikes in telemetry.",
+        "Track Crashlytics / Sentry for fatal cold startup exceptions."
+      ],
+      "decisionRules": [
+        "If server error rate exceeds 2%, throttle login queue rate and divert static asset traffic to CDN.",
+        "If fatal crash rate exceeds 1% in first 100 users, halt staged rollout."
+      ]
+    },
+    "hour-6": {
+      "title": "Hour 6 of Launch (Hour-6)",
+      "steps": [
+        "Analyze Google Play Vitals Crash and ANR rates.",
+        "Verify IAP conversion and transaction fulfillment (un-delivered purchase rate must be 0%).",
+        "Inspect level completion funnel analytics for early levels (Levels 1-5)."
+      ],
+      "decisionRules": [
+        "If Vitals metrics are healthy below thresholds, increase rollout to 25%.",
+        "If a specific device family exhibits repeated crashes, exclude that device tier temporarily."
+      ]
+    },
+    "day-1": {
+      "title": "24 Hours Post Launch (Day-1)",
+      "steps": [
+        "Expand rollout to 50% or 100%.",
+        "Evaluate Day-1 (D1) Retention and average session durations.",
+        "Gather player community feedback and monitor store star ratings."
+      ],
+      "decisionRules": [
+        "If D1 retention is significantly below targets, prepare Remote Config A/B test for onboarding difficulty."
+      ]
+    }
+  }
+}

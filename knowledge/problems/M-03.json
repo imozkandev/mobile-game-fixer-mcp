@@ -1,0 +1,68 @@
+{
+  "id": "M-03",
+  "title": "Periodic micro-stutters and frametime spikes from Garbage Collection (GC)",
+  "category": "performance",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "Micro-stutter every few seconds during gameplay",
+    "Profiler displays frequent GC.Alloc allocations and GC.Collect spikes",
+    "oyun arada donuyor, GC",
+    "Frametime hitching during combat or movement"
+  ],
+  "keywords": [
+    "gc",
+    "garbage collection",
+    "stutter",
+    "micro stutter",
+    "gc alloc",
+    "gc spike",
+    "frametime spike",
+    "heap allocation",
+    "object pool",
+    "donuyor",
+    "takilma"
+  ],
+  "causes": [
+    "Allocating new objects (e.g. `new List()`, string concatenations) inside Update/FixedUpdate loops",
+    "Boxing/unboxing value types and LINQ queries in per-frame logic",
+    "Instantiating and destroying bullets, particles, and enemies without Object Pooling"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Replace runtime string concatenations with StringBuilder or pre-allocated cached buffers.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Implement Object Pooling for frequently spawned entities (projectiles, visual FX, damage popups).",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Convert foreach loops and LINQ expressions in hot paths to indexed for-loops to eliminate iterator heap allocation.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Aim for zero bytes (0 B) GC.Alloc per frame in all active gameplay states."
+  ],
+  "tools": [],
+  "related": [
+    "M-01",
+    "M-02"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

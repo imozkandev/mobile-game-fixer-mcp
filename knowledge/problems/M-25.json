@@ -1,0 +1,63 @@
+{
+  "id": "M-25",
+  "title": "Save game progress reset when switching to a new device",
+  "category": "savegame",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "yeni telefonda ilerleme sıfırlandı",
+    "save progress reset on new phone",
+    "Save file not restoring on new device",
+    "Cloud save synchronization failure",
+    "Player starts from level 1 on new phone"
+  ],
+  "keywords": [
+    "save",
+    "cloud save",
+    "progress reset",
+    "new phone",
+    "google play games save",
+    "icloud save",
+    "ilerleme sifirlandi",
+    "kayit silindi",
+    "savegame"
+  ],
+  "causes": [
+    "Storing game progress only in local storage (PlayerPrefs/local file) without cloud backup",
+    "Missing authentication link to Google Play Games / Apple Game Center"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Integrate Google Play Games Saved Games and Apple iCloud / Game Center Cloud Save.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Load cloud save data when a user logs in on a new device instead of empty local template.",
+      "effort": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Use timestamps and checksums to resolve sync conflicts in favor of higher progress.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Sync local saves to cloud immediately upon critical milestones (level complete, IAP)."
+  ],
+  "tools": [],
+  "related": [
+    "M-26",
+    "M-27"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

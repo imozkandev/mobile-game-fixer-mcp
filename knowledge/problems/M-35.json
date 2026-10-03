@@ -1,0 +1,58 @@
+{
+  "id": "M-35",
+  "title": "Turkish 'i' uppercase/lowercase conversion bug breaking keys and enums",
+  "category": "localization",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "türkçe büyük harf i sorunu",
+    "Turkish i uppercase conversion bug",
+    "String enum parsing or JSON key lookup fails on Turkish locale devices",
+    "String.ToUpper() produces 'İTEM_İD' instead of 'ITEM_ID', breaking dictionary lookups",
+    "Turkish-i bug"
+  ],
+  "keywords": [
+    "turkish i",
+    "i sorunu",
+    "case conversion",
+    "toupper",
+    "tolower",
+    "cultureinvariant",
+    "string comparison",
+    "enum parse",
+    "turkce",
+    "buyuk harf i"
+  ],
+  "causes": [
+    "Using `str.ToUpper()` or `str.ToLower()` without CultureInfo.InvariantCulture, transforming `i->İ` on Turkish locales"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Always use `ToUpperInvariant()` or `StringComparison.OrdinalIgnoreCase` for internal IDs, JSON keys, and Enum parsing.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Apply culture-specific casing only when rendering text to user interface.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Run unit tests with current culture set to `tr-TR`."
+  ],
+  "tools": [],
+  "related": [
+    "M-36",
+    "M-37"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

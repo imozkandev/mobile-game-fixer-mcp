@@ -1,0 +1,55 @@
+{
+  "id": "M-07",
+  "title": "Rapid battery drain and background power consumption",
+  "category": "performance",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "Game drains 40% battery in 1 hour",
+    "Device heats up even on static menu screens"
+  ],
+  "keywords": [
+    "battery drain",
+    "power consumption",
+    "wakelock",
+    "background drain",
+    "menu fps",
+    "pil tuketimi"
+  ],
+  "causes": [
+    "Rendering static UI/menus at uncapped 60/120 FPS",
+    "Keeping location/GPS or continuous network polling active in background"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Lower target FPS to 30 on static menu and inventory screens.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Pause network polling loops and audio when app transitions to background.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Audit energy impact with Android Battery Historian and Xcode Energy Gauge."
+  ],
+  "tools": [],
+  "related": [
+    "M-01",
+    "M-38"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

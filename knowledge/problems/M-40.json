@@ -1,0 +1,61 @@
+{
+  "id": "M-40",
+  "title": "Emergency live fix without waiting for store approval (Remote Config / Kill Switch)",
+  "category": "liveops",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "hata var ama mağaza onayı beklemek istemiyorum",
+    "Critical live bug discovered, need immediate shutdown without store update",
+    "Store review takes days but economy exploit requires instant mitigation",
+    "Kill switch remote config panic"
+  ],
+  "keywords": [
+    "kill switch",
+    "remote config",
+    "hotfix",
+    "feature flag",
+    "emergency fix",
+    "live ops",
+    "magaza onayi beklemeden",
+    "canli mudahale",
+    "hata var"
+  ],
+  "causes": [
+    "Mobile store review cycles taking 1-3 days, preventing instant hotfixes for live economy exploits"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Define boolean Feature Flags (Kill Switches) in Firebase Remote Config for every major feature/event.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Disable the problematic mini-game or event by flipping the Remote Config flag to false.",
+      "effort": "low"
+    },
+    {
+      "step": 3,
+      "action": "Enforce `minimum_supported_version` parameter if a mandatory client update is required.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Gate all online events, IAP bundles, and mini-games behind Remote Config flags."
+  ],
+  "tools": [],
+  "related": [
+    "M-32",
+    "M-41"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

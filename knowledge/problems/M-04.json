@@ -1,0 +1,56 @@
+{
+  "id": "M-04",
+  "title": "Excessive overdraw and particle alpha blending causing GPU fillrate bottlenecks",
+  "category": "rendering",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "FPS drops severely during dense particle explosions or when UI overlay is open",
+    "Overdraw debug view reveals intense white/pink overlapping areas"
+  ],
+  "keywords": [
+    "overdraw",
+    "gpu bound",
+    "fillrate",
+    "alpha blending",
+    "particles",
+    "transparent ui",
+    "raycast target"
+  ],
+  "causes": [
+    "Multiple overlapping full-screen transparent particle effects",
+    "Invisible UI panels retaining active 'Raycast Target' flags"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Disable 'Raycast Target' on all decorative or non-interactive UI Text and Image elements.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Clamp Max Particles and scale down particle quad dimensions.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Inspect overdraw visualization in engine viewport before approving VFX."
+  ],
+  "tools": [],
+  "related": [
+    "M-01",
+    "M-05"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

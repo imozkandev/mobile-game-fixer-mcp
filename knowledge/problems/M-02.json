@@ -1,0 +1,77 @@
+{
+  "id": "M-02",
+  "title": "Silent crash / Out of Memory (OOM) termination on low-RAM devices",
+  "category": "memory",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "Game crashes silently on 2GB or 3GB RAM devices without error stack trace",
+    "Low memory warning from OS followed by immediate process kill",
+    "Game restarts from splash screen when returning from background",
+    "düşük ram'li telefonlarda oyun kendi kendine kapanıyor",
+    "Out of memory crash on 2GB devices"
+  ],
+  "keywords": [
+    "oom",
+    "out of memory",
+    "low ram",
+    "crash on low ram",
+    "memory budget",
+    "texture memory",
+    "lmk",
+    "low memory killer",
+    "silent crash",
+    "ram yetersiz",
+    "bellek yetersiz",
+    "kapaniyor"
+  ],
+  "causes": [
+    "Uncompressed or excessively high-resolution textures (4K textures on mobile)",
+    "Unused asset bundles and scene assets staying resident in memory",
+    "Large audio clips set to 'Decompress on Load' occupying high RAM"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Enforce ASTC texture compression and clamp maximum texture sizes (under 2048px on mobile).",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Change large background music and voice-over audio to 'Compressed in Memory' or 'Streaming'.",
+      "effort": "low"
+    },
+    {
+      "step": 3,
+      "action": "Invoke Resources.UnloadUnusedAssets() and Addressables.Release() on scene transitions.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Run automated stress tests on 2GB virtual devices and maintain total memory budget under 400MB."
+  ],
+  "tools": [
+    {
+      "name": "analyze_build_budget",
+      "project": "game-forge-mcp",
+      "coverage": "partial"
+    }
+  ],
+  "related": [
+    "M-01",
+    "M-03",
+    "M-28"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

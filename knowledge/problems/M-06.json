@@ -1,0 +1,58 @@
+{
+  "id": "M-06",
+  "title": "Shader compilation stutter when visual effects trigger for the first time",
+  "category": "rendering",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "Game freezes for 0.5s the very first time a skill or explosion triggers, then runs smoothly afterwards",
+    "Yeni bir partikül veya büyü ilk defa ekranda patladığında yarım saniye donma oluyor"
+  ],
+  "keywords": [
+    "shader stutter",
+    "shader compilation",
+    "shader warmup",
+    "shader pre-warming",
+    "vulkan shader",
+    "pso cache",
+    "partikül",
+    "büyü",
+    "patlama",
+    "ilk defa donma",
+    "hitching"
+  ],
+  "causes": [
+    "Compiling shader variants on-demand at runtime rather than pre-warming during splash loading"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Trigger Shader Warmup (e.g. Shader.WarmupAllShaders) on the loading splash screen.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Strip unused shader keywords and build a Shader Variant Collection.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Profile initial gameplay sessions on Vulkan and Metal to record all used shader variants."
+  ],
+  "tools": [],
+  "related": [
+    "M-03"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

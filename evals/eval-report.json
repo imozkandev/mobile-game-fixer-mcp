@@ -1,0 +1,330 @@
+{
+  "summary": {
+    "totalTests": 20,
+    "passed": 20,
+    "failed": 0,
+    "top1Accuracy": "100.0%",
+    "top3Accuracy": "100.0%",
+    "avgLatencyMs": "4.35ms"
+  },
+  "results": [
+    {
+      "testId": "eval-01",
+      "name": "Thermal Throttling Drop",
+      "category": "performance",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-01",
+      "actualTop3Ids": [
+        "M-01",
+        "M-03",
+        "M-02"
+      ],
+      "confidence": "high",
+      "latencyMs": 10.26
+    },
+    {
+      "testId": "eval-02",
+      "name": "English Overheating",
+      "category": "performance",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-01",
+      "actualTop3Ids": [
+        "M-01",
+        "M-04",
+        "M-39"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.27
+    },
+    {
+      "testId": "eval-03",
+      "name": "GC Allocation Spikes",
+      "category": "performance",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-03",
+      "actualTop3Ids": [
+        "M-03",
+        "M-01",
+        "M-06"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.52
+    },
+    {
+      "testId": "eval-04",
+      "name": "Shader Compilation Lag",
+      "category": "performance",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-06",
+      "actualTop3Ids": [
+        "M-06",
+        "M-35",
+        "M-25"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.5
+    },
+    {
+      "testId": "eval-05",
+      "name": "Low RAM OOM Termination",
+      "category": "memory_crash",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-02",
+      "actualTop3Ids": [
+        "M-02",
+        "M-01",
+        "M-03"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.64
+    },
+    {
+      "testId": "eval-06",
+      "name": "iOS Native SIGSEGV Crash",
+      "category": "memory_crash",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-29",
+      "actualTop3Ids": [
+        "M-29",
+        "M-02",
+        "M-30"
+      ],
+      "confidence": "medium",
+      "latencyMs": 3.58
+    },
+    {
+      "testId": "eval-07",
+      "name": "Android Vitals Threshold Exceeded",
+      "category": "memory_crash",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-28",
+      "actualTop3Ids": [
+        "M-28",
+        "M-41",
+        "M-10"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.81
+    },
+    {
+      "testId": "eval-08",
+      "name": "Google Play Target API 35 Requirement",
+      "category": "store_policy",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-10",
+      "actualTop3Ids": [
+        "M-10",
+        "M-12",
+        "M-25"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.33
+    },
+    {
+      "testId": "eval-09",
+      "name": "16 KB Page Size Alignment Error",
+      "category": "store_policy",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-11",
+      "actualTop3Ids": [
+        "M-11",
+        "M-10",
+        "M-13"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.84
+    },
+    {
+      "testId": "eval-10",
+      "name": "iOS Privacy Manifest Missing Reasons",
+      "category": "store_policy",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-13",
+      "actualTop3Ids": [
+        "M-13",
+        "M-15",
+        "M-17"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.67
+    },
+    {
+      "testId": "eval-11",
+      "name": "App Tracking Transparency IDFA Missing",
+      "category": "store_policy",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-14",
+      "actualTop3Ids": [
+        "M-14",
+        "M-40",
+        "M-16"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.49
+    },
+    {
+      "testId": "eval-12",
+      "name": "Gacha Loot Box Rates Undisclosed",
+      "category": "store_policy",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-16",
+      "actualTop3Ids": [
+        "M-16",
+        "M-22",
+        "M-01"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.44
+    },
+    {
+      "testId": "eval-13",
+      "name": "IAP Payment Deducted Item Not Delivered",
+      "category": "liveops_iap",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-20",
+      "actualTop3Ids": [
+        "M-20",
+        "M-31",
+        "M-22"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.34
+    },
+    {
+      "testId": "eval-14",
+      "name": "Save Data Loss Across Devices",
+      "category": "liveops_iap",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-25",
+      "actualTop3Ids": [
+        "M-25",
+        "M-22",
+        "M-01"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.56
+    },
+    {
+      "testId": "eval-15",
+      "name": "Save Schema Migration Failure",
+      "category": "liveops_iap",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-26",
+      "actualTop3Ids": [
+        "M-26",
+        "M-35",
+        "M-41"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.35
+    },
+    {
+      "testId": "eval-16",
+      "name": "Kill Switch Remote Config Panic",
+      "category": "liveops_iap",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-40",
+      "actualTop3Ids": [
+        "M-40",
+        "M-13",
+        "M-16"
+      ],
+      "confidence": "high",
+      "latencyMs": 4.04
+    },
+    {
+      "testId": "eval-17",
+      "name": "Level Churn Funnel Drop",
+      "category": "liveops_iap",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-22",
+      "actualTop3Ids": [
+        "M-22",
+        "M-39",
+        "M-01"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.34
+    },
+    {
+      "testId": "eval-18",
+      "name": "Turkish i Upper/Lowercase Case Bug",
+      "category": "localization",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-35",
+      "actualTop3Ids": [
+        "M-35"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.74
+    },
+    {
+      "testId": "eval-19",
+      "name": "RTL Arabic Text Disjointed",
+      "category": "localization",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-36",
+      "actualTop3Ids": [
+        "M-36",
+        "M-43",
+        "M-09"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.46
+    },
+    {
+      "testId": "eval-20",
+      "name": "Bluetooth Disconnect Audio Mute",
+      "category": "device_notch",
+      "passed": true,
+      "top1Matched": true,
+      "top3Matched": true,
+      "actualTopId": "M-39",
+      "actualTop3Ids": [
+        "M-39",
+        "M-22",
+        "M-24"
+      ],
+      "confidence": "high",
+      "latencyMs": 3.78
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "M-21",
+  "title": "Fake IAP exploit & missing server-side receipt validation",
+  "category": "iap",
+  "severity": "critical",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Cheaters obtaining free IAP items using Lucky Patcher or mocked StoreKit responses"
+  ],
+  "keywords": [
+    "fake iap",
+    "receipt validation",
+    "server side validation",
+    "storekit receipt",
+    "fatura dogrulama"
+  ],
+  "causes": [
+    "Validating purchases only on client side without authoritative server verification"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Validate all purchase receipts via server-to-server calls to Google Play RTDN and Apple App Store Server API.",
+      "effort": "high"
+    }
+  ],
+  "prevention": [
+    "Grant inventory items only after receiving verified server confirmation."
+  ],
+  "tools": [],
+  "related": [
+    "M-20",
+    "M-34"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.apple.com/documentation/storekit/in-app_purchase/validating_receipts_with_the_app_store",
+      "type": "primary",
+      "title": "Validating receipts with the App Store"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

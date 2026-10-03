@@ -1,0 +1,58 @@
+{
+  "id": "M-14",
+  "title": "iOS App Tracking Transparency (ATT) and IDFA tracking description missing",
+  "category": "store_policy",
+  "severity": "critical",
+  "platforms": [
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Guideline 5.1.2 - Legal - Privacy - Data Use and Sharing rejection",
+    "Collecting IDFA without requesting ATTrackingManager authorization",
+    "Missing NSUserTrackingUsageDescription in Info.plist",
+    "App tracking transparency missing key"
+  ],
+  "keywords": [
+    "att",
+    "app tracking transparency",
+    "idfa",
+    "nstracking",
+    "nsusertrackingusagedescription",
+    "guideline 5.1.2"
+  ],
+  "causes": [
+    "Advertising SDK attempting to read IDFA without prompting ATT authorization dialog or missing description string"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Add NSUserTrackingUsageDescription key to Info.plist with a clear explanation for users.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Call ATTrackingManager.requestTrackingAuthorization before initializing ad networks.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Configure ad SDKs to run in non-personalized mode when tracking is denied."
+  ],
+  "tools": [],
+  "related": [
+    "M-13",
+    "M-19"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+      "type": "primary",
+      "title": "User Privacy and Data Use"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

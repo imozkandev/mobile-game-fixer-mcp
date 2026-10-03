@@ -1,0 +1,49 @@
+{
+  "id": "M-27",
+  "title": "Offline gameplay progress overwritten by cloud save conflict",
+  "category": "savegame",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Offline progress made on airplane mode gets overwritten by older cloud save upon reconnecting"
+  ],
+  "keywords": [
+    "cloud conflict",
+    "offline progress",
+    "save conflict",
+    "merge save",
+    "kayit cakismasi"
+  ],
+  "causes": [
+    "Relying blindly on server timestamp rather than comparing gameplay progression milestones"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Present a conflict resolution dialog ('Local Progress (Lvl 15)' vs 'Cloud (Lvl 10)').",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Implement smart merging for currency and unlocked levels.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Structure save data with event-sourcing or additive delta tracking."
+  ],
+  "tools": [],
+  "related": [
+    "M-25",
+    "M-26"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

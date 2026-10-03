@@ -1,0 +1,49 @@
+{
+  "id": "M-44",
+  "title": "3rd party SDK dependency and duplicate class conflict",
+  "category": "store_policy",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Gradle build error 'Duplicate class found' or iOS linker error 'duplicate symbols for architecture'"
+  ],
+  "keywords": [
+    "duplicate class",
+    "dependency conflict",
+    "gradle conflict",
+    "duplicate symbol",
+    "androidx conflict"
+  ],
+  "causes": [
+    "Multiple SDKs bundling different versions of shared dependencies (e.g. AndroidX Core or Play Services)"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Enforce single dependency version in Gradle via `resolutionStrategy.force` or Android Dependency Manager.",
+      "effort": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Deduplicate overlapping CocoaPods dependencies in Podfile for iOS.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Inspect dependency tree (`./gradlew app:dependencies`) when adding new SDKs."
+  ],
+  "tools": [],
+  "related": [
+    "M-10",
+    "M-43"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

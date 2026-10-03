@@ -1,0 +1,48 @@
+{
+  "id": "M-42",
+  "title": "Initial download package size exceeding store cellular OTA limits",
+  "category": "liveops",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Players unable to download game over cellular data without Wi-Fi, lowering conversion rates"
+  ],
+  "keywords": [
+    "download size",
+    "ota limit",
+    "cellular limit",
+    "play asset delivery",
+    "on-demand resources"
+  ],
+  "causes": [
+    "Bundling all game scenes, audio, and high-res assets directly inside main binary"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Implement Google Play Asset Delivery (PAD) or Addressables to keep initial base package under 150MB.",
+      "effort": "high"
+    },
+    {
+      "step": 2,
+      "action": "Download subsequent level assets dynamically in background.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Audit build size reports to strip unused editor textures and temporary assets."
+  ],
+  "tools": [],
+  "related": [
+    "M-02"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

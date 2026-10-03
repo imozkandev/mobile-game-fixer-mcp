@@ -1,0 +1,48 @@
+{
+  "id": "M-23",
+  "title": "Player churn due to aggressive or ill-timed push notifications",
+  "category": "liveops",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "High notification opt-out rates and negative store reviews regarding midnight spam"
+  ],
+  "keywords": [
+    "push notifications",
+    "quiet hours",
+    "frequency capping",
+    "timezone push",
+    "bildirim spami"
+  ],
+  "causes": [
+    "Broadcasting push messages without respecting user timezone or setting frequency caps"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Enforce Quiet Hours (22:00 - 08:00 local time) on all automated notifications.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Cap daily notification frequency to maximum 1-2 valuable alerts.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Request notification permissions after user completes an engaging action (e.g. chest unlocking)."
+  ],
+  "tools": [],
+  "related": [
+    "M-22"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

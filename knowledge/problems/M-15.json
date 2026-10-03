@@ -1,0 +1,52 @@
+{
+  "id": "M-15",
+  "title": "Age rating and content declaration mismatch on store consoles",
+  "category": "store_policy",
+  "severity": "high",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Rejection because game themes (violence, gambling themes, IAP) conflict with IARC/Apple questionnaire answers"
+  ],
+  "keywords": [
+    "age rating",
+    "content rating",
+    "iarc",
+    "esrb",
+    "pegi",
+    "apple age rating",
+    "yas siniri"
+  ],
+  "causes": [
+    "Store content questionnaire filled out inconsistently with actual in-game features"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Retake content rating questionnaires on Play Console and App Store Connect matching current build content.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Re-evaluate age ratings whenever introducing new character skins, combat, or social features."
+  ],
+  "tools": [],
+  "related": [
+    "M-16",
+    "M-18"
+  ],
+  "sources": [
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "type": "primary",
+      "title": "Google Play Content Ratings"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}

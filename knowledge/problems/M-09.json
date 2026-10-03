@@ -1,0 +1,55 @@
+{
+  "id": "M-09",
+  "title": "Screen notch, dynamic island, and aspect ratio UI clipping",
+  "category": "device",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "unity",
+    "godot",
+    "unreal",
+    "any"
+  ],
+  "symptoms": [
+    "Buttons hidden beneath camera cutouts or dynamic island",
+    "UI clipped on tablets with 4:3 ratios"
+  ],
+  "keywords": [
+    "notch",
+    "cutout",
+    "safe area",
+    "aspect ratio",
+    "dynamic island",
+    "centik",
+    "ui clipping"
+  ],
+  "causes": [
+    "Fixed pixel coordinates ignoring Screen.safeArea in UI layout hierarchies"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Attach a dynamic Safe Area script that binds main UI panels to Screen.safeArea rect.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Use proportional stretch anchors for full-screen canvasses.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Test across varied device resolutions using Unity Device Simulator."
+  ],
+  "tools": [],
+  "related": [
+    "M-36",
+    "M-37"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "M-38",
+  "title": "Game failing to pause properly when backgrounded, playing audio",
+  "category": "device",
+  "severity": "medium",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "Game music continues playing and draining battery after user presses Home button"
+  ],
+  "keywords": [
+    "background pause",
+    "onapplicationpause",
+    "background audio",
+    "lifecycle",
+    "arka plan"
+  ],
+  "causes": [
+    "Failing to pause audio listener and rendering clock in OnApplicationPause / OnApplicationFocus"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Set `AudioListener.pause = true` and `Time.timeScale = 0` in application pause callbacks.",
+      "effort": "low"
+    }
+  ],
+  "prevention": [
+    "Test home button and incoming phone call interruptions on physical hardware."
+  ],
+  "tools": [],
+  "related": [
+    "M-07",
+    "M-24"
+  ],
+  "sources": [],
+  "verifiedAt": "2026-10-04",
+  "confidence": "established"
+}

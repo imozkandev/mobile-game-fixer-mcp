@@ -1,0 +1,62 @@
+{
+  "id": "M-28",
+  "title": "Google Play Android Vitals crash & ANR threshold exceeded",
+  "category": "crash",
+  "severity": "critical",
+  "platforms": [
+    "android"
+  ],
+  "engines": [
+    "any"
+  ],
+  "symptoms": [
+    "çökme oranı vitals eşiğine yaklaştı",
+    "Play Console Bad Behavior Threshold warning",
+    "User-perceived crash rate or ANR rate exceeded 1.09% threshold",
+    "Game discoverability reduced in Google Play search"
+  ],
+  "keywords": [
+    "vitals",
+    "android vitals",
+    "crash rate",
+    "anr rate",
+    "bad behavior",
+    "play console vitals",
+    "cokme orani",
+    "anr orani",
+    "vitals esigi"
+  ],
+  "causes": [
+    "Main thread blocking over 5 seconds (ANRs) or crashes clustered on specific device models"
+  ],
+  "solution": [
+    {
+      "step": 1,
+      "action": "Identify top crashing devices and stack traces from Play Console Vitals dashboard.",
+      "effort": "low"
+    },
+    {
+      "step": 2,
+      "action": "Move file I/O, heavy JSON parsing, and SDK initialization off the main UI thread.",
+      "effort": "medium"
+    }
+  ],
+  "prevention": [
+    "Test startup flows with Android StrictMode enabled."
+  ],
+  "tools": [],
+  "related": [
+    "M-02",
+    "M-29",
+    "M-30"
+  ],
+  "sources": [
+    {
+      "url": "https://developer.android.com/topic/performance/vitals/core",
+      "type": "primary",
+      "title": "Core Android Vitals"
+    }
+  ],
+  "verifiedAt": "2026-10-04",
+  "confidence": "policy"
+}
